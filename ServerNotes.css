@@ -1,0 +1,270 @@
+/* 
+ * ServerNotes plugin CSS
+ * Styling for the ServerNotes plugin modal and indicators
+ */
+
+/* Note indicators */
+.vc-server-notes-icon {
+    display: inline-flex;
+    margin-left: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.vc-server-notes-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.vc-server-notes-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Guild (server) specific styling */
+.vc-server-notes-guild-wrapper {
+    position: relative;
+}
+
+.vc-server-notes-guild-wrapper .vc-server-notes-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--background-floating);
+    border-radius: 50%;
+    padding: 2px;
+    margin: 0;
+    border: 1px solid var(--background-tertiary);
+    width: 14px;
+    height: 14px;
+}
+
+/* Tooltip styles */
+.vc-server-notes-tooltip {
+    max-width: 300px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.vc-server-notes-tooltip-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.vc-server-notes-tooltip-content {
+    font-style: italic;
+}
+
+.vc-server-notes-tooltip-footer {
+    margin-top: 4px;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+/* Note modal */
+.vc-server-notes-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vc-server-notes-modal {
+    background: var(--background-primary);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.vc-server-notes-modal-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--background-modifier-accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vc-server-notes-modal-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--header-primary);
+}
+
+.vc-server-notes-modal-close {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--interactive-normal);
+}
+
+.vc-server-notes-modal-close:hover {
+    color: var(--interactive-hover);
+}
+
+.vc-server-notes-modal-content {
+    padding: 16px;
+    min-height: 100px;
+}
+
+.vc-server-notes-modal-textarea {
+    width: 100%;
+    min-height: 150px;
+    background: var(--background-secondary);
+    color: var(--text-normal);
+    border: 1px solid var(--background-tertiary);
+    border-radius: 4px;
+    padding: 10px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.vc-server-notes-modal-textarea:focus {
+    outline: none;
+    border-color: var(--brand-experiment);
+}
+
+.vc-server-notes-modal-footer {
+    padding: 16px;
+    border-top: 1px solid var(--background-modifier-accent);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.vc-server-notes-modal-button {
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.vc-server-notes-modal-button-primary {
+    background-color: var(--brand-experiment);
+    color: #fff;
+    border: none;
+}
+
+.vc-server-notes-modal-button-primary:hover {
+    background-color: var(--brand-experiment-560);
+}
+
+.vc-server-notes-modal-button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.vc-server-notes-modal-button-secondary {
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    border: 1px solid var(--background-tertiary);
+}
+
+.vc-server-notes-modal-button-secondary:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+/* Notes manager */
+.vc-server-notes-manager {
+    padding: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.vc-server-notes-manager-search {
+    margin-bottom: 16px;
+}
+
+.vc-server-notes-manager-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--background-modifier-accent);
+    margin-bottom: 16px;
+}
+
+.vc-server-notes-manager-tab {
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: var(--interactive-normal);
+    border-bottom: 2px solid transparent;
+}
+
+.vc-server-notes-manager-tab:hover {
+    color: var(--interactive-hover);
+}
+
+.vc-server-notes-manager-tab.active {
+    color: var(--interactive-active);
+    border-bottom-color: var(--brand-experiment);
+}
+
+.vc-server-notes-manager-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vc-server-notes-manager-item {
+    background: var(--background-secondary);
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vc-server-notes-manager-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.vc-server-notes-manager-item-name {
+    font-weight: bold;
+}
+
+.vc-server-notes-manager-item-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.vc-server-notes-manager-item-action {
+    cursor: pointer;
+    padding: 4px;
+    color: var(--interactive-normal);
+}
+
+.vc-server-notes-manager-item-action:hover {
+    color: var(--interactive-hover);
+}
+
+.vc-server-notes-manager-item-content {
+    white-space: pre-wrap;
+    color: var(--text-normal);
+    word-break: break-word;
+}
+
+.vc-server-notes-manager-item-footer {
+    margin-top: 8px;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+.vc-server-notes-empty {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-muted);
+}
